@@ -1,0 +1,14 @@
+@{ ViewBag.Title = "Đăng ký"; }
+<div class="card p-4 mx-auto" style="max-width:500px">
+<h2>Đăng ký tài khoản</h2>
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+@using (Html.BeginForm()) {
+ @Html.AntiForgeryToken()
+ <div class="form-group mb-3"><label>Họ tên</label><input name="hoten" class="form-control" required /></div>
+ <div class="form-group mb-3"><label>Số điện thoại</label><input name="sdt" class="form-control" /></div>
+ <div class="form-group mb-3"><label>Tên đăng nhập</label><input name="username" class="form-control" required /></div>
+ <div class="form-group mb-3"><label>Mật khẩu</label><input name="password" type="password" class="form-control" required /></div>
+ <div class="form-group mb-3"><label>Nhập lại mật khẩu</label><input name="confirm" type="password" class="form-control" required /></div>
+ <button class="btn btn-primary btn-block">Đăng ký</button>
+}
+</div>

@@ -1,0 +1,5 @@
+@model IEnumerable<HotelBoking.Models.Phong>
+@{ ViewBag.Title = "Quản lý phòng"; }
+<h2>Quản lý phòng</h2>
+<table class="table table-bordered bg-white"><thead><tr><th>Mã phòng</th><th>Tên phòng</th><th>Loại</th><th>Giá</th><th>Trạng thái</th></tr></thead>
+<tbody>@foreach (var x in Model) { <tr><td>@x.MaPhong</td><td>@x.TenPhong</td><td>@x.LoaiPhong.TenLoaiPhong</td><td>@x.GiaPhong</td><td>@x.TrangThaiPhong.TenTrangThai</td></tr> }</tbody></table>

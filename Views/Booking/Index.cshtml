@@ -1,0 +1,14 @@
+@model HotelBoking.Models.Phong
+@{ ViewBag.Title = "Đặt phòng"; }
+<div class="card p-4">
+<h2>Đặt phòng: @Model.TenPhong</h2>
+<p>Giá: @String.Format("{0:N0} đ/đêm", Model.GiaPhong ?? Model.LoaiPhong.GiaPhong)</p>
+@using (Html.BeginForm("Create", "Booking", FormMethod.Post)) {
+ @Html.AntiForgeryToken()
+ <input type="hidden" name="maPhong" value="@Model.MaPhong" />
+ <div class="form-group mb-3"><label>Ngày nhận phòng</label><input type="date" name="ngayDen" class="form-control" required /></div>
+ <div class="form-group mb-3"><label>Ngày trả phòng</label><input type="date" name="ngayDi" class="form-control" required /></div>
+ <div class="form-group mb-3"><label>Số khách</label><input type="number" min="1" max="@Model.SoNguoi" name="soKhach" value="1" class="form-control" required /></div>
+ <button class="btn btn-primary">Xác nhận đặt phòng</button>
+}
+</div>

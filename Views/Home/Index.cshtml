@@ -1,0 +1,18 @@
+@model IEnumerable<HotelBoking.Models.Phong>
+@{ ViewBag.Title = "Trang chủ"; }
+<div class="jumbotron bg-white p-5 rounded mb-4">
+ <h1>Paradise Hotel & Homestay</h1>
+ <p>Đặt phòng nhanh chóng, lựa chọn không gian nghỉ dưỡng phù hợp.</p>
+ @Html.ActionLink("Xem danh sách phòng", "Index", "Room", null, new { @class = "btn btn-primary" })
+</div>
+<h3>Phòng nổi bật</h3>
+<div class="row">
+@foreach (var room in Model) {
+ <div class="col-md-4 mb-4"><div class="card room-card">
+  <img class="card-img-top" src="@Url.Content("~/Images/" + (room.HinhAnh ?? "hotel1.jpg"))" />
+  <div class="card-body"><h5>@room.TenPhong</h5><p>@room.LoaiPhong.TenLoaiPhong</p>
+   <p class="price">@String.Format("{0:N0} đ/đêm", room.GiaPhong ?? room.LoaiPhong.GiaPhong)</p>
+   @Html.ActionLink("Chi tiết", "Details", "Room", new { id = room.MaPhong }, new { @class = "btn btn-outline-primary" })
+  </div></div></div>
+}
+</div>

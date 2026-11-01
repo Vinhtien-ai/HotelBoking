@@ -1,0 +1,21 @@
+.signup-page {
+    max-width: 100%;
+}
+.signup-card {
+    max-width: 560px;
+    padding: 28px;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+}
+.signup-card h2 {
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+.signup-card .form-control,
+.signup-card .form-select {
+    padding: 9px 12px;
+}
+.signup-card .btn {
+    padding: 10px;
+}

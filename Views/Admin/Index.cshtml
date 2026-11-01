@@ -1,0 +1,11 @@
+@model IEnumerable<HotelBoking.Models.OrderPhong>
+@{ ViewBag.Title = "Quản trị"; }
+<h2>Trang quản trị</h2>
+<div class="row mb-4">
+<div class="col-md-4"><div class="card p-3"><h5>Tổng số phòng</h5><h2>@ViewBag.SoPhong</h2></div></div>
+<div class="col-md-4"><div class="card p-3"><h5>Đơn đặt phòng</h5><h2>@ViewBag.SoDon</h2></div></div>
+<div class="col-md-4"><div class="card p-3"><h5>Khách hàng</h5><h2>@ViewBag.SoKhach</h2></div></div>
+</div>
+<p>@Html.ActionLink("Quản lý phòng", "Rooms", null, new { @class = "btn btn-primary" })</p>
+<table class="table table-bordered bg-white"><thead><tr><th>Mã đơn</th><th>Khách hàng</th><th>Phòng</th><th>Ngày đến</th><th>Ngày đi</th><th>Tổng tiền</th></tr></thead>
+<tbody>@foreach (var x in Model) { <tr><td>@x.MaOrderPhong</td><td>@x.Person.HoTen</td><td>@x.Phong.TenPhong</td><td>@x.NgayDen</td><td>@x.NgayDi</td><td>@String.Format("{0:N0} đ",x.TongTien)</td></tr> }</tbody></table>

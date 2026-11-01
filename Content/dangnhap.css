@@ -1,0 +1,20 @@
+.login-page {
+    max-width: 100%;
+}
+.login-card {
+    max-width: 420px;
+    padding: 28px;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+}
+.login-card h2 {
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+.login-card .form-control {
+    padding: 10px 12px;
+}
+.login-card .btn {
+    padding: 10px;
+}

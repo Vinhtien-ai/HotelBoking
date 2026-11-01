@@ -1,0 +1,9 @@
+.home-hero { min-height: 500px; background: linear-gradient(rgba(18,28,42,.68), rgba(18,28,42,.76)), url('/pictures/hotel3.jpg') center/cover no-repeat; }
+.home-hero .container { position: relative; z-index: 1; }
+.hero-description { max-width: 700px; margin-left: auto; margin-right: auto; }
+.search-panel { max-width: 1050px; border-radius: 14px; margin-top: -20px; }
+.search-panel h5 { font-size: 1.15rem; }
+.letter-spacing-1 { letter-spacing: 1px; }
+.room-card-image { transition: transform .25s ease; }
+.card:hover .room-card-image { transform: scale(1.015); }
+@media (max-width: 767px) { .home-hero { min-height: auto; padding-bottom: 2rem !important; } .search-panel { margin-top: 0; padding: 1rem !important; } .home-hero h1 { font-size: 2rem; } }

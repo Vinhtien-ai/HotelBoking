@@ -1,0 +1,10 @@
+@model HotelBoking.Models.Phong
+@{ ViewBag.Title = "Chi tiết phòng"; }
+<div class="row bg-white p-4 rounded">
+ <div class="col-md-6"><img class="img-fluid rounded" src="@Url.Content("~/Images/" + (Model.HinhAnh ?? "hotel1.jpg"))" /></div>
+ <div class="col-md-6"><h2>@Model.TenPhong</h2><p>Loại phòng: @Model.LoaiPhong.TenLoaiPhong</p>
+ <p>Sức chứa: @Model.SoNguoi người</p><p>Diện tích: @Model.DienTich m²</p><p>@Model.MoTaPhong</p>
+ <h4 class="price">@String.Format("{0:N0} đ/đêm", Model.GiaPhong ?? Model.LoaiPhong.GiaPhong)</h4>
+ @Html.ActionLink("Đặt phòng", "Index", "Booking", new { id = Model.MaPhong }, new { @class = "btn btn-primary" })
+ </div>
+</div>

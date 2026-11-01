@@ -1,0 +1,21 @@
+@model IEnumerable<HotelBoking.Models.Phong>
+@{ ViewBag.Title = "Danh sách phòng"; }
+<h2>Danh sách phòng</h2>
+<form method="get" class="form-inline mb-3">
+ <select name="loaiphong" class="form-control mr-2">
+  <option value="">Tất cả loại phòng</option>
+  @foreach (var item in (IEnumerable<HotelBoking.Models.LoaiPhong>)ViewBag.LoaiPhongs) {
+   <option value="@item.MaLoaiPhong">@item.TenLoaiPhong</option>
+  }
+ </select><button class="btn btn-primary">Lọc phòng</button>
+</form>
+<div class="row">
+@foreach (var room in Model) {
+ <div class="col-md-4 mb-4"><div class="card room-card">
+  <img class="card-img-top" src="@Url.Content("~/Images/" + (room.HinhAnh ?? "hotel1.jpg"))" />
+  <div class="card-body"><h5>@room.TenPhong</h5><p>@room.LoaiPhong.TenLoaiPhong</p>
+  <p class="price">@String.Format("{0:N0} đ/đêm", room.GiaPhong ?? room.LoaiPhong.GiaPhong)</p>
+  @Html.ActionLink("Chi tiết", "Details", new { id = room.MaPhong }, new { @class = "btn btn-outline-primary" })
+  </div></div></div>
+}
+</div>
